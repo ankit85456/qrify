@@ -1,0 +1,65 @@
+[dotenv@17.3.1] injecting env (3) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Server running on port 5000
+MongoDB Connected
+ValidationError: QRCode validation failed: payload: Path `payload` is required.
+    at Document.invalidate (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\document.js:3420:32)
+    at validatePath (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\document.js:3192:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Promise.all (index 0)
+    at async model.$__validate (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\document.js:3133:3)
+    at async model.validate (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\document.js:2702:5)
+    at async model.validateBeforeSavePreSave (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\plugins\validateBeforeSave.js:39:5)
+    at async Kareem.execPre (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\kareem\index.js:70:24)
+    at async model.$__save (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\model.js:376:5)
+    at async model.save (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\model.js:642:5) {
+  errors: {
+    payload: ValidatorError: Path `payload` is required.
+        at SchemaString.doValidate (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\schemaType.js:1424:13)
+        at validatePath (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\document.js:3184:24)
+        at model.$__validate (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\document.js:3130:21)
+        at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+        at async model.validate (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\document.js:2702:5)
+        at async model.validateBeforeSavePreSave (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\plugins\validateBeforeSave.js:39:5)
+        at async Kareem.execPre (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\kareem\index.js:70:24)
+        at async model.$__save (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\model.js:376:5)
+        at async model.save (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\model.js:642:5)
+        at async C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\routes\qrRoutes.js:169:5 {
+      properties: [Object],
+      kind: 'required',
+      path: 'payload',
+      value: undefined,
+      reason: undefined,
+      Symbol(mongoose#validatorError): true
+    }
+  },
+  _message: 'QRCode validation failed'
+}
+CastError: Cast to ObjectId failed for value "=pass123" (type string) at path "_id" for model "QRCode"
+    at SchemaObjectId.cast (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\schema\objectId.js:253:11)
+    at SchemaType.applySetters (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\schemaType.js:1279:12)
+    at SchemaType.castForQuery (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\schemaType.js:1705:17)
+    at cast (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\cast.js:386:32)
+    at Query.cast (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:5088:12)
+    at Query._castConditions (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:2376:10)
+    at model.Query._findOne (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:2716:8)
+    at model.Query.exec (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:4687:80)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\routes\qrRoutes.js:144:16 {
+  stringValue: '"=pass123"',
+  messageFormat: undefined,
+  kind: 'ObjectId',
+  value: '=pass123',
+  path: '_id',
+  reason: BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
+      at new ObjectId (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\bson\lib\bson.cjs:2636:23)
+      at castObjectId (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at SchemaObjectId.cast (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\schema\objectId.js:251:12)
+      at SchemaType.applySetters (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\schemaType.js:1279:12)
+      at SchemaType.castForQuery (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\schemaType.js:1705:17)
+      at cast (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\cast.js:386:32)
+      at Query.cast (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:5088:12)
+      at Query._castConditions (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:2376:10)
+      at model.Query._findOne (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:2716:8)
+      at model.Query.exec (C:\Users\HP\OneDrive\Desktop\qrify\qrify-backend\node_modules\mongoose\lib\query.js:4687:80),
+  valueType: 'string'
+}
